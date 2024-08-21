@@ -35,32 +35,31 @@ Take a birds eye view look at the data, such as how many rows and columns it con
 ```python
 df.shape
 ```
-
-![[1446-02-17 11_40_37-rollercoasterexploratory-data-analysis-with-python.ipynb - Visual Studio Code.png]]
+![1446-0~1](https://github.com/user-attachments/assets/b1c342c6-3c82-45c6-9cbf-fa28614ecf67)
 
 ```python
 df.head(5)
 ```
-
-![[1446-02-17 11_46_01-● rollercoasterexploratory-data-analysis-with-python.ipynb - Visual Studio Code.png]]
+![1446-0~2](https://github.com/user-attachments/assets/1b0e7dc5-87c3-491e-a2a9-a3b99d7c842d)
 
 ```python
 df.columns
 ```
 
-![[1446-02-17 11_46_42-● rollercoasterexploratory-data-analysis-with-python.ipynb - Visual Studio Code.png]]
+![1446-0~3](https://github.com/user-attachments/assets/dfbc823e-b9d0-41b4-9b41-7893f9ab57ce)
 
 ```python
 df.dtypes
 ```
 
-![[1446-02-17 11_47_11-● rollercoasterexploratory-data-analysis-with-python.ipynb - Visual Studio Code.png]]
+![1446-0~4](https://github.com/user-attachments/assets/679402c2-6ace-4f48-bf1d-eb05a62bfb8b)
 
 ```python
 df.describe()
 ```
 
-![[1446-02-17 11_47_51-● rollercoasterexploratory-data-analysis-with-python.ipynb - Visual Studio Code.png]]
+![148112~1](https://github.com/user-attachments/assets/8a219a19-0ab0-4e8f-8cef-dd99dd714eed)
+
 
 # Data Cleaning
 ---
@@ -119,7 +118,8 @@ df = df[['coaster_name',
 df
 ```
 
-![[1446-02-17 12_36_26-● rollercoasterexploratory-data-analysis-with-python.ipynb - Visual Studio Code.png]]
+![1433D9~1](https://github.com/user-attachments/assets/537a2642-9099-4199-b09a-fc83991771b8)
+
 
 ### Correcting dtypes
 ---
@@ -130,8 +130,8 @@ df['opening_date_clean'] = pd.to_datetime(df['opening_date_clean'])
 df.dtypes
 ```
 
+![14A3BE~1](https://github.com/user-attachments/assets/1e367e94-a248-445d-991b-2faaac9a0a48)
 
-![[1446-02-17 12_38_42-● rollercoasterexploratory-data-analysis-with-python.ipynb - Visual Studio Code.png]]
 
 ### Renaming columns
 ---
@@ -160,8 +160,9 @@ df = df.rename(columns={'coaster_name':'Coaster_Name',
 df
 ```
 
+![1404A2~1](https://github.com/user-attachments/assets/47281e4c-e468-441c-a426-985580bf54f8)
 
-![[1446-02-17 12_39_37-● rollercoasterexploratory-data-analysis-with-python.ipynb - Visual Studio Code.png]]
+
 ### Checking for NA and duplicate values
 ---
 
@@ -169,14 +170,14 @@ df
 df.isna().sum()
 ```
 
+![141EE3~1](https://github.com/user-attachments/assets/2fa0cd63-a390-4850-b7eb-9346db6a181c)
 
-![[1446-02-17 12_42_08-● rollercoasterexploratory-data-analysis-with-python.ipynb - Visual Studio Code.png]]
 
 ```python
 df.loc[df.duplicated()]
 ```
 
-![[1446-02-17 12_42_49-Rollercoaster Dataset - Python - Main Vault - Obsidian v1.6.7.png]]
+![1446-02-17 12_42_49-Rollercoaster Dataset - Python - Main Vault - Obsidian v1 6 7](https://github.com/user-attachments/assets/aba8242e-a3d8-46c0-8313-8949ef9320b6)
 
 ```python
 # Check for duplicate coaster name
@@ -184,7 +185,8 @@ df.loc[df.duplicated()]
 df.loc[df.duplicated(subset = ['Coaster_Name'])]
 ```
 
-![[1446-02-17 12_43_15-● rollercoasterexploratory-data-analysis-with-python.ipynb - Visual Studio Code.png]]
+![143020~1](https://github.com/user-attachments/assets/18cea060-aac7-4b67-90f2-5434ae9b9628)
+
 
 ```python
 # removing duplicates
@@ -211,7 +213,7 @@ ax.set_xlabel('Year Introduced')
 ax.set_ylabel('Count')
 ```
 
-![[__results___23_1.png]]
+![__results___23_1](https://github.com/user-attachments/assets/efa3958c-f436-4163-89bd-adc19e1e24ee)
 
 
 ## Rollercoaster Speed (mph)
@@ -225,7 +227,8 @@ ax = df['Speed_mph'].plot(kind = 'hist', bins = 20, title = 'RCoaster Speed (mph
 ax.set_xlabel('Speed(mph)')
 ```
 
-![[__results___24_1.png]]
+![__results___24_1](https://github.com/user-attachments/assets/1e8b0958-beac-459b-b528-7899b57b466f)
+
 
 ```python
 ax = df['Speed_mph'].plot(kind = 'kde',
@@ -235,7 +238,8 @@ ax = df['Speed_mph'].plot(kind = 'kde',
 ax.set_xlabel('Speed(mph)')
 ```
 
-![[__results___25_1.png]]
+![__results___25_1](https://github.com/user-attachments/assets/fb377110-28c9-4ec0-a0c4-072d3a8e3090)
+
 
 # Feature Relationships
 ---
@@ -248,7 +252,8 @@ df.plot(kind = 'scatter', x='Speed_mph', y = 'Height_ft', title = 'RCoaster Spee
 plt.show()
 ```
 
-![[__results___28_0.png]]
+![__results___28_0](https://github.com/user-attachments/assets/906a478a-a44c-4ccc-8474-a40b6ea034fd)
+
 
 ```python
 ax = sns.scatterplot(x='Speed_mph',
@@ -259,7 +264,8 @@ ax.set_title('Coaster Speed vs. Height')
 plt.show()
 ```
 
-![[__results___29_0.png]]
+![__results___29_0](https://github.com/user-attachments/assets/3a7a03d2-9672-4910-8db5-97ed46472a62)
+
 
 ## All Features
 ---
@@ -272,7 +278,8 @@ sns.pairplot(df,
 plt.show()
 ```
 
-![[__results___30_0.png]]
+![__results___30_0](https://github.com/user-attachments/assets/36370015-60b6-4843-91ba-e6a863becc4c)
+
 
 ```python
 df_corr = df[['Year_Introduced','Speed_mph',
@@ -280,14 +287,16 @@ df_corr = df[['Year_Introduced','Speed_mph',
 df_corr
 ```
 
+![1446-02-17 12_51_49-🎢 Introduction to Exploratory Data Analysis - Brave](https://github.com/user-attachments/assets/e1d713f3-c95a-43f7-9db9-958770d9bc3e)
 
-![[1446-02-17 12_51_49-🎢 Introduction to Exploratory Data Analysis - Brave.png]]
 
 ```python
 sns.heatmap(df_corr, annot = True)
 ```
 
-![[__results___32_1.png]]
+![__results___32_1](https://github.com/user-attachments/assets/469b823a-d0a1-4eae-acfc-579a84c52c51)
+
+
 # Ask a question about the data
 ---
 ## What are the locations with the fastest rollercoasters (min. 10)
@@ -297,7 +306,8 @@ sns.heatmap(df_corr, annot = True)
 df['Location'].value_counts()
 ```
 
-![[1446-02-17 12_53_16-● rollercoasterexploratory-data-analysis-with-python.ipynb - Visual Studio Code.png]]
+![14DD3C~1](https://github.com/user-attachments/assets/88d6a12a-c936-4d6c-9a1c-78de7867d988)
+
 
 ```python
 ax = df.query('Location != "Other"' ) \
@@ -317,4 +327,4 @@ ax.set_xlabel('Average RCoaster Speed')
 plt.show()
 ```
 
-![[__results___34_0.png]]
+![__results___34_0](https://github.com/user-attachments/assets/2d383eb6-82a1-404f-beb1-034cec2acf2a)
