@@ -1,4 +1,4 @@
-# Project Overview
+# 🎢 Project Overview
 ---
 This is a Data Exploration, Data Cleaning and Data Visualization project made using Python and the Pandas library about a rollercoaster dataset where I looked into some interesting insights such as years with the highest number of Rollercoasters introduced, highest speeds and heights, highest speeds by location and more. 
 
